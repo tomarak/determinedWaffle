@@ -1,16 +1,12 @@
 angular.module('thumbsCheckApp')
-  .controller('InstructorCtrl', function($scope, $firebaseObject, Ref, user, pickRandomService, verifyInstructorService) {
+  .controller('InstructorCtrl', function($scope, $firebaseObject, Ref, $rootScope, $location, user, broadcastInstructorRole, pickRandomService) {
     // To get userID.role from web browser localStorage
-    //    if (localStorage.getItem(user.uid) !== 'instructor') {
-    //      $location.path('/student-main');
-    //    } else {
-    //      // Broadcast role to navbar.js controller
-    //      broadcastInstructorRole.broadcast('instructor');
-    //    }
-    //
-
-    verifyInstructorService.verifyIfInstructor(user.uid);
-
+    if (localStorage.getItem(user.uid) !== 'instructor') {
+      $location.path('/student-main');
+    } else {
+      // Broadcast role to navbar.js controller
+      broadcastInstructorRole.broadcast('instructor');
+    }
 
     // This is firebase responses table url
     var responsesRef = Ref.child('responses');
