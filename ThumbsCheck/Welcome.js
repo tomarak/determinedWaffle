@@ -9,10 +9,23 @@ var {
   TouchableHighlight,
 } = React;
 
+var Firebase = require('firebase-react-native');
+
+var fb = new Firebase("https://popping-torch-1564.firebaseio.com");
+
+
 var Welcome = React.createClass({
+
+  // componentWillMount: function() {
+  //   var ref = new Firebase("https://popping-torch-1564.firebaseio.com/users/");
+  //   this.bindAsArray(ref, "users");
+  // },
 
   login() {
     console.log("here");
+    // this.ref["users"].push({name: "Bitsy"});
+    // fb.save({name: "Bitsy"});
+    // console.log("fb", fb);
   },
 
 
