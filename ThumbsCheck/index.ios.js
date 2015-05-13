@@ -2,6 +2,7 @@
 
 var React = require('react-native');
 var Welcome = require('./Welcome');
+var TodoApp2 = require('./TodoApp2');
 
 var styles = React.StyleSheet.create({
   text: {
@@ -31,7 +32,7 @@ class ThumbsCheckApp extends React.Component {
         style={styles.container}
         initialRoute={{
           title: 'Welcome',
-          component: Welcome,
+          component: TodoApp2,
         }}/>
     );
   }

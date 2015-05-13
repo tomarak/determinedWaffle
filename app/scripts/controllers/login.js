@@ -11,6 +11,8 @@ angular.module('thumbsCheckApp')
       }).then(addUser, showError);
     };
 
+    //determines whether user is instructor
+
     function addUser() {
       Ref.onAuth(function(user) {
         var instructorsObj = $firebaseObject(Ref.child('instructors'));
