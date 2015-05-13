@@ -24,6 +24,7 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
+		A34B82DB1B02E8E800D84E24 /* libwebsockets.c in Frameworks */ = {isa = PBXBuildFile; fileRef = A34B82C01B02E8C300D84E24 /* libwebsockets.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,18 +115,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		00481BDB1AC0C7FA00671115 /* RCTWebSocketDebugger.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTWebSocketDebugger.xcodeproj; path = node_modules/react-native/Libraries/RCTWebSocketDebugger/RCTWebSocketDebugger.xcodeproj; sourceTree = "<group>"; };
+		00481BDB1AC0C7FA00671115 /* RCTWebSocketDebugger.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTWebSocketDebugger.xcodeproj; path = "node_modules/react-native/Libraries/RCTWebSocketDebugger/RCTWebSocketDebugger.xcodeproj"; sourceTree = "<group>"; };
 		008F07F21AC5B25A0029DE68 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = main.jsbundle; path = iOS/main.jsbundle; sourceTree = "<group>"; };
-		00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTActionSheet.xcodeproj; path = node_modules/react-native/Libraries/ActionSheetIOS/RCTActionSheet.xcodeproj; sourceTree = "<group>"; };
-		00C302AF1ABCB8E700DB3ED1 /* RCTAdSupport.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAdSupport.xcodeproj; path = node_modules/react-native/Libraries/AdSupport/RCTAdSupport.xcodeproj; sourceTree = "<group>"; };
-		00C302B51ABCB90400DB3ED1 /* RCTGeolocation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTGeolocation.xcodeproj; path = node_modules/react-native/Libraries/Geolocation/RCTGeolocation.xcodeproj; sourceTree = "<group>"; };
-		00C302BB1ABCB91800DB3ED1 /* RCTImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTImage.xcodeproj; path = node_modules/react-native/Libraries/Image/RCTImage.xcodeproj; sourceTree = "<group>"; };
-		00C302D31ABCB9D200DB3ED1 /* RCTNetwork.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTNetwork.xcodeproj; path = node_modules/react-native/Libraries/Network/RCTNetwork.xcodeproj; sourceTree = "<group>"; };
-		00C302DF1ABCB9EE00DB3ED1 /* RCTVibration.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTVibration.xcodeproj; path = node_modules/react-native/Libraries/Vibration/RCTVibration.xcodeproj; sourceTree = "<group>"; };
+		00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTActionSheet.xcodeproj; path = "node_modules/react-native/Libraries/ActionSheetIOS/RCTActionSheet.xcodeproj"; sourceTree = "<group>"; };
+		00C302AF1ABCB8E700DB3ED1 /* RCTAdSupport.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAdSupport.xcodeproj; path = "node_modules/react-native/Libraries/AdSupport/RCTAdSupport.xcodeproj"; sourceTree = "<group>"; };
+		00C302B51ABCB90400DB3ED1 /* RCTGeolocation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTGeolocation.xcodeproj; path = "node_modules/react-native/Libraries/Geolocation/RCTGeolocation.xcodeproj"; sourceTree = "<group>"; };
+		00C302BB1ABCB91800DB3ED1 /* RCTImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTImage.xcodeproj; path = "node_modules/react-native/Libraries/Image/RCTImage.xcodeproj"; sourceTree = "<group>"; };
+		00C302D31ABCB9D200DB3ED1 /* RCTNetwork.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTNetwork.xcodeproj; path = "node_modules/react-native/Libraries/Network/RCTNetwork.xcodeproj"; sourceTree = "<group>"; };
+		00C302DF1ABCB9EE00DB3ED1 /* RCTVibration.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTVibration.xcodeproj; path = "node_modules/react-native/Libraries/Vibration/RCTVibration.xcodeproj"; sourceTree = "<group>"; };
 		00E356EE1AD99517003FC87E /* ThumbsCheckTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThumbsCheckTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* ThumbsCheckTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThumbsCheckTests.m; sourceTree = "<group>"; };
-		139105B61AF99BAD00B5F7CC /* RCTSettings.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTSettings.xcodeproj; path = node_modules/react-native/Libraries/Settings/RCTSettings.xcodeproj; sourceTree = "<group>"; };
+		139105B61AF99BAD00B5F7CC /* RCTSettings.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTSettings.xcodeproj; path = "node_modules/react-native/Libraries/Settings/RCTSettings.xcodeproj"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* ThumbsCheck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThumbsCheck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = iOS/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = iOS/AppDelegate.m; sourceTree = "<group>"; };
@@ -133,9 +134,48 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = iOS/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = iOS/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = iOS/main.m; sourceTree = "<group>"; };
-		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = node_modules/react-native/React/React.xcodeproj; sourceTree = "<group>"; };
-		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj; sourceTree = "<group>"; };
-		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = node_modules/react-native/Libraries/Text/RCTText.xcodeproj; sourceTree = "<group>"; };
+		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
+		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
+		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
+		A34B82A91B02E8C300D84E24 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		A34B82AA1B02E8C300D84E24 /* alloc.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = alloc.c; sourceTree = "<group>"; };
+		A34B82AB1B02E8C300D84E24 /* base64-decode.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = "base64-decode.c"; sourceTree = "<group>"; };
+		A34B82AC1B02E8C300D84E24 /* client-handshake.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = "client-handshake.c"; sourceTree = "<group>"; };
+		A34B82AD1B02E8C300D84E24 /* client-parser.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = "client-parser.c"; sourceTree = "<group>"; };
+		A34B82AE1B02E8C300D84E24 /* client.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = client.c; sourceTree = "<group>"; };
+		A34B82AF1B02E8C300D84E24 /* context.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = context.c; sourceTree = "<group>"; };
+		A34B82B01B02E8C300D84E24 /* daemonize.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = daemonize.c; sourceTree = "<group>"; };
+		A34B82B11B02E8C300D84E24 /* extension-deflate-frame.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = "extension-deflate-frame.c"; sourceTree = "<group>"; };
+		A34B82B21B02E8C300D84E24 /* extension-deflate-frame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "extension-deflate-frame.h"; sourceTree = "<group>"; };
+		A34B82B31B02E8C300D84E24 /* extension-deflate-stream.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = "extension-deflate-stream.c"; sourceTree = "<group>"; };
+		A34B82B41B02E8C300D84E24 /* extension-deflate-stream.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "extension-deflate-stream.h"; sourceTree = "<group>"; };
+		A34B82B51B02E8C300D84E24 /* extension.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = extension.c; sourceTree = "<group>"; };
+		A34B82B61B02E8C300D84E24 /* getifaddrs.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = getifaddrs.c; sourceTree = "<group>"; };
+		A34B82B71B02E8C300D84E24 /* getifaddrs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = getifaddrs.h; sourceTree = "<group>"; };
+		A34B82B81B02E8C300D84E24 /* handshake.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = handshake.c; sourceTree = "<group>"; };
+		A34B82B91B02E8C300D84E24 /* header.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = header.c; sourceTree = "<group>"; };
+		A34B82BA1B02E8C300D84E24 /* hpack.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = hpack.c; sourceTree = "<group>"; };
+		A34B82BB1B02E8C300D84E24 /* http2.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = http2.c; sourceTree = "<group>"; };
+		A34B82BC1B02E8C300D84E24 /* huftable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = huftable.h; sourceTree = "<group>"; };
+		A34B82BD1B02E8C300D84E24 /* lextable-strings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "lextable-strings.h"; sourceTree = "<group>"; };
+		A34B82BE1B02E8C300D84E24 /* lextable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = lextable.h; sourceTree = "<group>"; };
+		A34B82BF1B02E8C300D84E24 /* libev.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = libev.c; sourceTree = "<group>"; };
+		A34B82C01B02E8C300D84E24 /* libwebsockets.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = libwebsockets.c; sourceTree = "<group>"; };
+		A34B82C11B02E8C300D84E24 /* libwebsockets.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = libwebsockets.h; sourceTree = "<group>"; };
+		A34B82C21B02E8C300D84E24 /* lws-plat-unix.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = "lws-plat-unix.c"; sourceTree = "<group>"; };
+		A34B82C31B02E8C300D84E24 /* lws-plat-win.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = "lws-plat-win.c"; sourceTree = "<group>"; };
+		A34B82C41B02E8C300D84E24 /* minihuf.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = minihuf.c; sourceTree = "<group>"; };
+		A34B82C51B02E8C300D84E24 /* minilex.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = minilex.c; sourceTree = "<group>"; };
+		A34B82C61B02E8C300D84E24 /* output.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = output.c; sourceTree = "<group>"; };
+		A34B82C71B02E8C300D84E24 /* parsers.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = parsers.c; sourceTree = "<group>"; };
+		A34B82C81B02E8C300D84E24 /* pollfd.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = pollfd.c; sourceTree = "<group>"; };
+		A34B82C91B02E8C300D84E24 /* private-libwebsockets.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "private-libwebsockets.h"; sourceTree = "<group>"; };
+		A34B82CA1B02E8C300D84E24 /* server-handshake.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = "server-handshake.c"; sourceTree = "<group>"; };
+		A34B82CB1B02E8C300D84E24 /* server.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = server.c; sourceTree = "<group>"; };
+		A34B82CC1B02E8C300D84E24 /* service.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = service.c; sourceTree = "<group>"; };
+		A34B82CD1B02E8C300D84E24 /* sha-1.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = "sha-1.c"; sourceTree = "<group>"; };
+		A34B82CE1B02E8C300D84E24 /* ssl-http2.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = "ssl-http2.c"; sourceTree = "<group>"; };
+		A34B82CF1B02E8C300D84E24 /* ssl.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = ssl.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +190,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A34B82DB1B02E8E800D84E24 /* libwebsockets.c in Frameworks */,
 				146834051AC3E58100842450 /* libReact.a in Frameworks */,
 				139105C61AF99C1200B5F7CC /* libRCTSettings.a in Frameworks */,
 				00481BE81AC0C86700671115 /* libRCTWebSocketDebugger.a in Frameworks */,
@@ -307,6 +348,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				A34B82A81B02E8C300D84E24 /* lib */,
 				13B07FAE1A68108700A75B9A /* ThumbsCheck */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* ThumbsCheckTests */,
@@ -323,6 +365,53 @@
 				00E356EE1AD99517003FC87E /* ThumbsCheckTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		A34B82A81B02E8C300D84E24 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				A34B82A91B02E8C300D84E24 /* .gitignore */,
+				A34B82AA1B02E8C300D84E24 /* alloc.c */,
+				A34B82AB1B02E8C300D84E24 /* base64-decode.c */,
+				A34B82AC1B02E8C300D84E24 /* client-handshake.c */,
+				A34B82AD1B02E8C300D84E24 /* client-parser.c */,
+				A34B82AE1B02E8C300D84E24 /* client.c */,
+				A34B82AF1B02E8C300D84E24 /* context.c */,
+				A34B82B01B02E8C300D84E24 /* daemonize.c */,
+				A34B82B11B02E8C300D84E24 /* extension-deflate-frame.c */,
+				A34B82B21B02E8C300D84E24 /* extension-deflate-frame.h */,
+				A34B82B31B02E8C300D84E24 /* extension-deflate-stream.c */,
+				A34B82B41B02E8C300D84E24 /* extension-deflate-stream.h */,
+				A34B82B51B02E8C300D84E24 /* extension.c */,
+				A34B82B61B02E8C300D84E24 /* getifaddrs.c */,
+				A34B82B71B02E8C300D84E24 /* getifaddrs.h */,
+				A34B82B81B02E8C300D84E24 /* handshake.c */,
+				A34B82B91B02E8C300D84E24 /* header.c */,
+				A34B82BA1B02E8C300D84E24 /* hpack.c */,
+				A34B82BB1B02E8C300D84E24 /* http2.c */,
+				A34B82BC1B02E8C300D84E24 /* huftable.h */,
+				A34B82BD1B02E8C300D84E24 /* lextable-strings.h */,
+				A34B82BE1B02E8C300D84E24 /* lextable.h */,
+				A34B82BF1B02E8C300D84E24 /* libev.c */,
+				A34B82C01B02E8C300D84E24 /* libwebsockets.c */,
+				A34B82C11B02E8C300D84E24 /* libwebsockets.h */,
+				A34B82C21B02E8C300D84E24 /* lws-plat-unix.c */,
+				A34B82C31B02E8C300D84E24 /* lws-plat-win.c */,
+				A34B82C41B02E8C300D84E24 /* minihuf.c */,
+				A34B82C51B02E8C300D84E24 /* minilex.c */,
+				A34B82C61B02E8C300D84E24 /* output.c */,
+				A34B82C71B02E8C300D84E24 /* parsers.c */,
+				A34B82C81B02E8C300D84E24 /* pollfd.c */,
+				A34B82C91B02E8C300D84E24 /* private-libwebsockets.h */,
+				A34B82CA1B02E8C300D84E24 /* server-handshake.c */,
+				A34B82CB1B02E8C300D84E24 /* server.c */,
+				A34B82CC1B02E8C300D84E24 /* service.c */,
+				A34B82CD1B02E8C300D84E24 /* sha-1.c */,
+				A34B82CE1B02E8C300D84E24 /* ssl-http2.c */,
+				A34B82CF1B02E8C300D84E24 /* ssl.c */,
+			);
+			name = lib;
+			path = ../../libwebsockets/lib;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
