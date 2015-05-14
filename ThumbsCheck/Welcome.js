@@ -12,14 +12,31 @@ var {
 
 var Welcome = React.createClass({
 
+
+    vote(user, thumb) {
+    var thumb = "up"
+    var user = "github125";
+    var obj = {};
+    obj[user] =thumb;
+    var url = "https://popping-torch-1564.firebaseio.com/responses/" + user + ".json";
+    console.log(url);
+    return fetch(url  , {
+    method: 'put',
+    body: JSON.stringify(obj)
+  }).then((res) => res.json());
+
+  },
+
   
   login() {
 
-    var obj = {name: "mark"};
-    return fetch('https://torrid-inferno-5602.firebaseio.com/mark.json'  , {
+    
+    var obj = {github:73555}
+    return fetch('https://torrid-inferno-5602.firebaseio.com/responses.json'  , {
       method: 'post',
       body: JSON.stringify(obj)
     }).then((res) => res.json());
+
 
   },
 
@@ -36,7 +53,7 @@ var Welcome = React.createClass({
         <Text style={styles.instructions}>
           Get Voting
         </Text>
-        <TouchableHighlight style={styles.button} onPress={this.login}
+        <TouchableHighlight style={styles.button} onPress={this.vote}
 
             underlayColor='#99d9f4'>
           <Text style={styles.buttonText}>Login</Text>
