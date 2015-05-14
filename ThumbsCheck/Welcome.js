@@ -13,11 +13,13 @@ var {
 var Welcome = React.createClass({
 
 
+//Voting here for testing purposes.  To be moved to StudenMain
     vote(user, thumb) {
     var thumb = "up"
     var user = "github125";
     var obj = {};
     obj[user] =thumb;
+    //Update url based on firebase account in angularfire/config.js
     var url = "https://popping-torch-1564.firebaseio.com/responses/" + user + ".json";
     console.log(url);
     return fetch(url  , {
@@ -30,7 +32,7 @@ var Welcome = React.createClass({
   
   login() {
 
-    
+    //To be updated with fb authentication
     var obj = {github:73555}
     return fetch('https://torrid-inferno-5602.firebaseio.com/responses.json'  , {
       method: 'post',

@@ -43,8 +43,30 @@ var styles = StyleSheet.create({
 //response.child(123456ID.child= {123456ID: 'up'})
 
 class StudentMain extends Component{
+
+
+//Need to incorporate voting
+  vote(user, thumb) {
+    var thumb = "up"
+    var user = "github126";
+    var obj = {};
+    obj[user] =thumb;
+
+  //Update url based on angularfire/config.js
+    var url = "https://popping-torch-1564.firebaseio.com/responses/" + user + ".json";
+    console.log(url);
+    return fetch(url  , {
+    method: 'put',
+    body: JSON.stringify(obj)
+  }).then((res) => res.json());
+
+  },
+
   _onPressButton(){
     console.log('pressed');
+
+    //Need to split out types of votes (thumb direction)
+    this.vote();
   }
 
   render(){
