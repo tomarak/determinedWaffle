@@ -13,7 +13,7 @@ var {
   Component
 } = React;
 
-styles = StyleSheet.create({
+var styles = StyleSheet.create({
   description: {
     marginBottom: 20,
     fontSize: 18,
@@ -24,7 +24,11 @@ styles = StyleSheet.create({
     padding: 30,
     marginTop: 65,
     alignItems: 'center'
-  }
+  },
+  image: {
+    width:200,
+    height:200,
+  },
 });
 
 class Submitted extends Component{
@@ -32,8 +36,9 @@ class Submitted extends Component{
     return(
       <View style = {styles.container}>
         <Text style = {styles.description}>
-          Thanks for Voting!
+          Thanks for Voting, {this.props.name}!
         </Text>
+        <Image source={require('image!ThumbsThanks')} style={styles.image}/>
       </View>
     );
   }
