@@ -42,34 +42,43 @@ var styles = StyleSheet.create({
 
 //response.child(123456ID.child= {123456ID: 'up'})
 
-class StudentMain extends Component{
+var StudentMain = React.createClass({
+  _onPressButton: function(){
+    console.log('pressed');
+  },
 
-
-//Need to incorporate voting
-  vote(user, thumb) {
-    var thumb = "up"
-    var user = "github126";
-    var obj = {};
-    obj[user] =thumb;
-
-  //Update url based on angularfire/config.js
-    var url = "https://popping-torch-1564.firebaseio.com/responses/" + user + ".json";
-    console.log(url);
-    return fetch(url  , {
-    method: 'put',
-    body: JSON.stringify(obj)
-  }).then((res) => res.json());
+  instructorTriggerState: function(){
+    var url = "https://blinding-inferno-9896.firebaseio.com/trigger/val.json";
+    fetch(url)
+      .then((response) => response.json())
+      .then((responseData) => {
+        this.setState({
+        isTriggered: responseData,
+        });
+      })
+      .done();
 
   },
 
-  _onPressButton(){
-    console.log('pressed');
+  getInitialState: function(){
+    return {isTriggered: false}
+  },
 
-    //Need to split out types of votes (thumb direction)
-    this.vote();
-  }
+  componentDidMount: function(){
+    this.instructorTriggerState()
+    setInterval(this.instructorTriggerState, 2000)
+  },
 
-  render(){
+  render: function(){
+    if(this.state.isTriggered){
+      return this.renderThumbsCheckView();
+    }
+    else{
+      return this.renderWaitingView();
+    }
+  },
+
+  renderThumbsCheckView: function(){
     return(
       <View style = {styles.container}>
         <Text style = {styles.description}>
@@ -84,7 +93,6 @@ class StudentMain extends Component{
           <Image source={require('image!ThumbsMiddle')} style={styles.image}/>
         </TouchableHighlight>
 
-
         <TouchableHighlight onPress={this._onPressButton} underlayColor='red' activeOpacity='1' style={styles.button}>
           <Image source={require('image!ThumbsDown')} style={styles.image}/>
         </TouchableHighlight>
@@ -95,7 +103,16 @@ class StudentMain extends Component{
         </Text>
       </View>
     );
-  }
-}
+  },
 
+  renderWaitingView: function(){
+    return(
+    <View style = {styles.container}>
+        <Text style = {styles.description}>
+          Waiting for thumbs check...
+        </Text>
+    </View>
+    )
+  }
+})
 module.exports = StudentMain;
