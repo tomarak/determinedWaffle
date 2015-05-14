@@ -13,6 +13,8 @@ var {
   Component
 } = React;
 
+var Submitted = require('./Submitted');
+
 var styles = StyleSheet.create({
   description: {
     marginBottom: 20,
@@ -40,15 +42,12 @@ var styles = StyleSheet.create({
   }
 });
 
-//response.child(123456ID.child= {123456ID: 'up'})
 
 var StudentMain = React.createClass({
-  _onPressButton: function(){
-    console.log('pressed');
-  },
+
 
   instructorTriggerState: function(){
-    var url = "https://blinding-inferno-9896.firebaseio.com/trigger/val.json";
+    var url = "https://popping-torch-1564.firebaseio.com/trigger/val.json";
     fetch(url)
       .then((response) => response.json())
       .then((responseData) => {
@@ -58,6 +57,25 @@ var StudentMain = React.createClass({
       })
       .done();
 
+  },
+
+
+  vote: function(user, thumb) {
+    var obj = {};
+    obj[user] =thumb;
+
+    var url = "https://popping-torch-1564.firebaseio.com/responses/" + user + ".json";
+    console.log(url);
+    return fetch(url  , {
+    method: 'put',
+    body: JSON.stringify(obj),
+  }).then((res) => res.json())
+
+    .then(this.props.navigator.push({
+    title: "Thanks!",
+    component: Submitted,
+    passProps: {name: "Brian"}
+    }));
   },
 
   getInitialState: function(){
@@ -85,15 +103,16 @@ var StudentMain = React.createClass({
           Thumbs on your understanding of React Native!
         </Text>
 
-        <TouchableHighlight onPress={this._onPressButton} underlayColor='green' activeOpacity='1' style={styles.button}>
+        <TouchableHighlight onPress={this.vote.bind(this, "brian", "up")} underlayColor='green' activeOpacity='1' style={styles.button}>
           <Image source={require('image!ThumbsUp')} style={styles.image}/>
         </TouchableHighlight>
         
-        <TouchableHighlight onPress={this._onPressButton} underlayColor='gray' activeOpacity='1' style={styles.button}>
+        <TouchableHighlight onPress={this.vote.bind(this, "paul", "middle")} underlayColor='gray' activeOpacity='1' style={styles.button}>
           <Image source={require('image!ThumbsMiddle')} style={styles.image}/>
         </TouchableHighlight>
 
-        <TouchableHighlight onPress={this._onPressButton} underlayColor='red' activeOpacity='1' style={styles.button}>
+
+        <TouchableHighlight onPress={this.vote.bind(this, "mary", "down")} underlayColor='red' activeOpacity='1' style={styles.button}>
           <Image source={require('image!ThumbsDown')} style={styles.image}/>
         </TouchableHighlight>
 
@@ -102,8 +121,9 @@ var StudentMain = React.createClass({
           Pick a thumb.
         </Text>
       </View>
-    );
+    )
   },
+  
 
   renderWaitingView: function(){
     return(
@@ -115,4 +135,5 @@ var StudentMain = React.createClass({
     )
   }
 })
+
 module.exports = StudentMain;
