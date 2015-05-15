@@ -49,9 +49,9 @@ var StudentMain = React.createClass({
     var url = "https://popping-torch-1564.firebaseio.com/trigger/val.json";
     fetch(url)
       .then((response) => response.json())
-      .then((responseData) => {
+      .then((state) => {
         this.setState({
-        thumbsCheckTriggered: responseData,
+        thumbsCheckTriggered: state,
         });
       })
       .done();
@@ -61,35 +61,22 @@ var StudentMain = React.createClass({
     var url = "https://popping-torch-1564.firebaseio.com/quizTrigger/val.json";
     fetch(url)
       .then((response) => response.json())
-      .then((responseData) => {
+      .then((state) => {
         this.setState({
-        quizTriggered: responseData,
+        quizTriggered: state,
         });
       })
       .done();
   },
-  getQuizChoices: function(){
-    var url = "https://popping-torch-1564.firebaseio.com/quizTrigger/val.json";
+  getQuiz: function(){
+    var url = "https://popping-torch-1564.firebaseio.com/newQuiz/quiz.json";
     fetch(url)
       .then((response) => response.json())
-      .then((responseData) => {
-        this.setState({
-        quizTriggered: responseData,
-        });
+      .then((quiz) => {
+        this.props.quiz = quiz;
       })
       .done();
   },
-  getQuizQuestion: function(){
-   var url = "https://popping-torch-1564.firebaseio.com/newQuiz/quiz/qu";
-    fetch(url)
-      .then((response) => response.json())
-      .then((responseData) => {
-        this.setState({
-        quizTriggered: responseData,
-        });
-      })
-      .done();
-  }
 
   vote: function(user, thumb) {
     var obj = {};
