@@ -45,51 +45,87 @@ var styles = StyleSheet.create({
 
 var StudentMain = React.createClass({
 
-
-  instructorTriggerState: function(){
+  getThumbsCheckState: function(){
     var url = "https://popping-torch-1564.firebaseio.com/trigger/val.json";
     fetch(url)
       .then((response) => response.json())
       .then((responseData) => {
         this.setState({
-        isTriggered: responseData,
+        thumbsCheckTriggered: responseData,
         });
       })
       .done();
-
   },
 
+  getQuizState: function(){
+    var url = "https://popping-torch-1564.firebaseio.com/quizTrigger/val.json";
+    fetch(url)
+      .then((response) => response.json())
+      .then((responseData) => {
+        this.setState({
+        quizTriggered: responseData,
+        });
+      })
+      .done();
+  },
+  getQuizChoices: function(){
+    var url = "https://popping-torch-1564.firebaseio.com/quizTrigger/val.json";
+    fetch(url)
+      .then((response) => response.json())
+      .then((responseData) => {
+        this.setState({
+        quizTriggered: responseData,
+        });
+      })
+      .done();
+  },
+  getQuizQuestion: function(){
+   var url = "https://popping-torch-1564.firebaseio.com/newQuiz/quiz/qu";
+    fetch(url)
+      .then((response) => response.json())
+      .then((responseData) => {
+        this.setState({
+        quizTriggered: responseData,
+        });
+      })
+      .done();
+  }
 
   vote: function(user, thumb) {
     var obj = {};
     obj[user] =thumb;
 
     var url = "https://popping-torch-1564.firebaseio.com/responses/" + user + ".json";
-    console.log(url);
-    return fetch(url  , {
-    method: 'put',
-    body: JSON.stringify(obj),
-  }).then((res) => res.json())
-
-    .then(this.props.navigator.push({
-    title: "Thanks!",
-    component: Submitted,
-    passProps: {name: "Brian"}
-    }));
+    return fetch(url, {
+      method: 'put',
+      body: JSON.stringify(obj),
+      }).then((res) => res.json())
+        .then(this.props.navigator.push({
+        title: "Thanks!",
+        component: Submitted,
+        passProps: {name: "Brian"}
+        }));
   },
 
   getInitialState: function(){
-    return {isTriggered: false}
+    return {thumbsCheckTriggered: false,
+      quizTriggered: false}
   },
 
   componentDidMount: function(){
-    this.instructorTriggerState()
-    setInterval(this.instructorTriggerState, 2000)
+    this.getThumbsCheckState()
+    this.getQuizState()
+
+    setInterval(this.getThumbsCheckState, 2000)
+    setInterval(this.getQuizState, 2000)
   },
 
   render: function(){
-    if(this.state.isTriggered){
+    if(this.state.thumbsCheckTriggered){
       return this.renderThumbsCheckView();
+    }
+    else if(this.state.quizTriggered){
+      return this.renderQuizView();
     }
     else{
       return this.renderWaitingView();
@@ -122,6 +158,10 @@ var StudentMain = React.createClass({
         </Text>
       </View>
     )
+  },
+
+  renderQuizView: function(){
+
   },
   
 
