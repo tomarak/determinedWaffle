@@ -16,18 +16,25 @@ var {
 var styles = StyleSheet.create({
   description: {
     marginBottom: 20,
-    fontSize: 18,
+    fontSize: 46,
     textAlign: 'center',
-    color: '#656565'
+    color: '#022200'
   },
   container: {
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'center',
     padding: 30,
     marginTop: 65,
-    alignItems: 'center'
+    alignItems: 'center',
+    backgroundColor: '#CAE7C9',
+    borderWidth: 20,
+    borderColor: "#76BD72",
   },
   image: {
-    width:200,
-    height:200,
+    // flex: 0.1,
+    height: 200,
+    width: 335
   },
 });
 
@@ -38,7 +45,7 @@ class Submitted extends Component{
         <Text style = {styles.description}>
           Thanks for Voting, {this.props.name}!
         </Text>
-        <Image source={require('image!ThumbsThanks')} style={styles.image}/>
+        <Image source={require('image!PuppyFive')} style={styles.image}/>
       </View>
     );
   }
