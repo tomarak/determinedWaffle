@@ -1,13 +1,20 @@
-[![Stories in Ready](https://badge.waffle.io/determinedWaffle/determinedWaffle.png?label=ready&title=Ready)](https://waffle.io/determinedWaffle/determinedWaffle)
+
 # Thumbs Check
 
 > Enhanced real-time classroom interaction and analytics
 
-## Team
+
+## Web App Team
 
   - __Product Owner__: Mike Yao
   - __Scrum Master__: Andy Sponring
   - __Development Team Members__: Austin Liu, David Trinh, Mike Yao, Andy Sponring
+
+## Mobile App Team
+
+  - __Product Owner__: Lauren Spiegel
+  - __Scrum Master__: Brian Liu
+  - __Development Team Members__: Brian Liu, Mark Tausch, Anuj Tomar, Lauren Spiegel
 
 ## Table of Contents
 
@@ -24,7 +31,9 @@
 
 ## Usage
 
-To view a live hosted instance of the app, visit [this link](https://waffleup.firebaseapp.com/).
+To view a live hosted instance of the web app, visit [this link](https://waffleup.firebaseapp.com/).
+
+The mobile app is developed for iOS and can be explored using the iOS simulator included with Xcode (open ThumbsCheck.xcodeproj in Xcode and run build).  
 
 You will be asked to login via GitHub. Once you have authorized the application, you will be taken to the main view for a student. When an instructor initiates a poll (either a thumbs check or a mini-quiz), this page will be updated with the poll.
 
@@ -36,6 +45,7 @@ If you would like to use the app as an instructor, you will need to add your Git
 - Express 4.x
 - Firebase Instance (set up at www.firebase.com)
 - Bower
+- React Native 0.4.2x
 
 ## Tech stack
 
@@ -48,6 +58,8 @@ The very thin server we have is based on Node and Express.
 The UI is based on [Bootstrap](http://getbootstrap.com/).
 
 Bower will install all the front-end dependencis for you. Grunt automates some tasks for us. Unit testing (just a stub for now) is done with Karma and uses [Angular-Mocks](https://github.com/angular/bower-angular-mocks) (included in the Bower dependencies).
+
+For the mobile app we use React Native.  The mobile app also communicates with the Firebase backen but through [Firebase's REST API](https://www.firebase.com/docs/rest/api/) rather than through AngularFire.
 
 ## Development
 
@@ -90,9 +102,7 @@ grunt deploy --prod
 
 You will be prompted to enter your Firebase login credentials. Once completed, just navigate to 'https://<your_app_name>.firebaseapp.com/' where 'your_app_name' is the the name you configured in Firebase for your app. We used 'https://waffleup.firebaseapp.com/'.
 
-## Roadmap
 
-View the project roadmap [here](https://github.com/determinedWaffle/determinedWaffle/issues).
 
 
 ## Contributing
