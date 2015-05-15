@@ -106,6 +106,23 @@ var StudentMain = React.createClass({
         }));
   },
 
+  voteQuiz: function(choice){
+    var obj = {};
+    var user = this.props.name;
+    obj[user] =choice;
+
+    var url = "https://popping-torch-1564.firebaseio.com/quizResponses/" + user + ".json";
+    return fetch(url, {
+      method: 'put',
+      body: JSON.stringify(obj),
+      }).then((res) => res.json())
+        .then(this.props.navigator.push({
+        title: "Thanks!",
+        component: Submitted,
+        passProps: {name: user}
+        }));
+  },
+
   getInitialState: function(){
     console.log(this.props);
     return {thumbsCheckTriggered: false,
@@ -168,14 +185,14 @@ var StudentMain = React.createClass({
 
   renderQuizView: function(){
     if(this.state.quiz.choices ){
-
-    var choices = this.state.quiz.choices.map(function(choice){
-        return ( 
-          <Text style = {styles.description}>
-            {choice}
-          </Text>
-          )
-      })
+      var self = this;
+      var choices = this.state.quiz.choices.map(function(choice, index){
+          return ( 
+            <Text style = {styles.description} onPress= {self.voteQuiz.bind(self, index)}>
+              {choice}
+            </Text>
+            )
+        })
   };
     return (
       <View style = {styles.container}>
