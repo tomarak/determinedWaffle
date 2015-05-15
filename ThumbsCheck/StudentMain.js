@@ -17,15 +17,19 @@ var Submitted = require('./Submitted');
 
 var styles = StyleSheet.create({
   description: {
+    marginTop: 20,
     marginBottom: 20,
     fontSize: 18,
     textAlign: 'center',
-    color: '#656565'
+    color: '#CBE7C9',
+    containerBackgroundColor: 'transparent'
   },
   container: {
-    padding: 30,
-    marginTop: 65,
-    alignItems: 'center'
+    padding: 70,
+    alignItems: 'center',
+    backgroundColor: '#0A5606',
+    borderColor: '#76BD72',
+    borderWidth: 15,
   },
   flowRight: {
     flexDirection: 'row',
@@ -39,6 +43,13 @@ var styles = StyleSheet.create({
   button: {
     marginTop: 10,
     marginBottom: 10
+  },
+  buttonContainer: {
+    width: 100,
+    height: 100,
+    marginBottom: 25,
+    alignSelf: 'center',
+    backgroundColor: 'transparent'
   }
 });
 
@@ -129,18 +140,23 @@ var StudentMain = React.createClass({
           Thumbs on your understanding of React Native!
         </Text>
 
-        <TouchableHighlight onPress={this.vote.bind(this, "up")} underlayColor='green' activeOpacity='1' style={styles.button}>
-          <Image source={require('image!ThumbsUp')} style={styles.image}/>
-        </TouchableHighlight>
-        
-        <TouchableHighlight onPress={this.vote.bind(this, "middle")} underlayColor='gray' activeOpacity='1' style={styles.button}>
-          <Image source={require('image!ThumbsMiddle')} style={styles.image}/>
-        </TouchableHighlight>
+        <View style={styles.buttonContainer}>
+          <TouchableHighlight onPress={this.vote.bind(this, "up")} underlayColor='transparent' activeOpacity='0.70' style={styles.button}>
+            <Image source={require('image!ThumbsUp')} style={styles.image}/>
+          </TouchableHighlight>
+        </View>
 
+        <View style={styles.buttonContainer}>
+          <TouchableHighlight onPress={this.vote.bind(this, "middle")} underlayColor='transparent' activeOpacity='0.70' style={styles.button}>
+            <Image source={require('image!ThumbsMiddle')} style={styles.image}/>
+          </TouchableHighlight>
+        </View>
 
-        <TouchableHighlight onPress={this.vote.bind(this, "down")} underlayColor='red' activeOpacity='1' style={styles.button}>
-          <Image source={require('image!ThumbsDown')} style={styles.image}/>
-        </TouchableHighlight>
+        <View style={styles.buttonContainer}>
+          <TouchableHighlight onPress={this.vote.bind(this, "down")} underlayColor='transparent' activeOpacity='0.70' style={styles.button}>
+            <Image source={require('image!ThumbsDown')} style={styles.image}/>
+          </TouchableHighlight>
+        </View>
 
 
         <Text style = {styles.description}>
