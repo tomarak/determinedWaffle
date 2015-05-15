@@ -1,6 +1,7 @@
 'use strict'
-  
+
 var React = require('react-native');
+var StudentMain = require('./StudentMain');
 var {
   AppRegistry,
   StyleSheet,
@@ -34,8 +35,22 @@ var Welcome = React.createClass({
         console.log(error, 'err');
         this.setState({result: error});
       } else {
-        console.log(info);
-        this.setState({result: info});
+        console.log(info.token);
+        
+
+
+        var url = 'https://graph.facebook.com/v2.3/'+ info.userId+ '?access_token='+info.token;
+        //fetch userdata from fb
+        return fetch(url).then((res) =>res.json())
+          .then((data) => {
+            console.log(data);
+            this.setState({result: data.name});
+          })
+          .then(this.props.navigator.push({
+            title: "Thanks!",
+            component: StudentMain,
+            passProps: {name: "Brian"}
+          }));
       }
     });
   },
