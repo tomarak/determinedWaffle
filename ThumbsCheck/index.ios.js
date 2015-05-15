@@ -2,7 +2,6 @@
 
 var React = require('react-native');
 var Welcome = require('./Welcome');
-var StudentMain = require('./StudentMain');
 
 var styles = React.StyleSheet.create({
   text: {
