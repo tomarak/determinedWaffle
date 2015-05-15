@@ -1,78 +1,68 @@
-
-'use strict';
-
+'use strict'
+  
 var React = require('react-native');
 var {
+  AppRegistry,
   StyleSheet,
   Text,
   View,
-  TouchableHighlight,
+  TouchableHighlight
 } = React;
 
+var NativeModules = require('NativeModules');
+
+var FacebookLoginManager = NativeModules.FacebookLoginManager;
 
 var Welcome = React.createClass({
-
-
-//Voting here for testing purposes.  To be moved to StudenMain
-    vote(user, thumb) {
-    var thumb = "up"
-    var user = "github125";
-    var obj = {};
-    obj[user] =thumb;
-    //Update url based on firebase account in angularfire/config.js
-    var url = "https://popping-torch-1564.firebaseio.com/responses/" + user + ".json";
-    console.log(url);
-    return fetch(url  , {
-    method: 'put',
-    body: JSON.stringify(obj)
-  }).then((res) => res.json());
-
+  getInitialState() {
+    console.log('init');
+    return {
+      result: '...'
+    }
   },
 
-  
+  componentDidMount() {
+    var self = this;
+  },
+
   login() {
+    console.log('loginer');
+    FacebookLoginManager.newSession((error, info) => {
 
-    //To be updated with fb authentication
-    var obj = {github:73555}
-    return fetch('https://torrid-inferno-5602.firebaseio.com/responses.json'  , {
-      method: 'post',
-      body: JSON.stringify(obj)
-    }).then((res) => res.json());
-
-
+      console.log('info', info);
+      if (error) {
+        console.log(error, 'err');
+        this.setState({result: error});
+      } else {
+        console.log(info);
+        this.setState({result: info});
+      }
+    });
   },
 
-
-  render: function() {
+  render() {
+    console.log('lolel');
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to Thumbs Check!
-        </Text>
-        <Text style={styles.instructions}>
-          Login through GitHub
-        </Text>
-        <Text style={styles.instructions}>
-          Get Voting
-        </Text>
-        <TouchableHighlight style={styles.button} onPress={this.vote}
-
-            underlayColor='#99d9f4'>
-          <Text style={styles.buttonText}>Login</Text>
+        <TouchableHighlight onPress={this.login}>
+          <Text style={styles.welcome}>
+            Facebook Login
+          </Text>
         </TouchableHighlight>
+        <Text style={styles.instructions}>
+          {this.state.result}
+        </Text>
       </View>
-
-
-     
     );
   }
 });
 
 var styles = StyleSheet.create({
   container: {
-    padding: 30,
-    marginTop: 65,
-    alignItems: 'center'
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#F5FCFF',
   },
   welcome: {
     fontSize: 20,
@@ -84,18 +74,5 @@ var styles = StyleSheet.create({
     color: '#333333',
     marginBottom: 5,
   },
-  button: {
-    height: 36,
-    flex: 1,
-    flexDirection: 'row',
-    backgroundColor: '#48BBEC',
-    borderColor: '#48BBEC',
-    borderWidth: 1,
-    borderRadius: 8,
-    marginBottom: 10,
-    alignSelf: 'stretch',
-    justifyContent: 'center'
-  },
 });
-
 module.exports = Welcome;
