@@ -65,15 +65,17 @@ var StudentMain = React.createClass({
       .done();
   },
 
-  getQuiz: function(state){
+  getQuiz: function(quizstate){
     var url = "https://popping-torch-1564.firebaseio.com/newQuiz/quiz.json";
-     fetch(url)
+    if(quizstate){
+      fetch(url)
       .then((response) => response.json())
       .then((quiz) => {
         this.setState({quiz: quiz})
       })
       .done()
-    this.setState({ quizTriggered: state })
+    }
+     this.setState({ quizTriggered: quizstate })
   },
 
   vote: function(user, thumb) {
@@ -147,14 +149,16 @@ var StudentMain = React.createClass({
   },
 
   renderQuizView: function(){
+    if(this.state.quiz.choices ){
+
     var choices = this.state.quiz.choices.map(function(choice){
         return ( 
           <Text style = {styles.description}>
             {choice}
           </Text>
           )
-      });
-
+      })
+  };
     return (
       <View style = {styles.container}>
         <Text style = {styles.description}>
