@@ -65,6 +65,7 @@ var Welcome = React.createClass({
   renderLoginView() {
     return(
       <View style={styles.container}>
+      <Image source={require('image!thmblr')} style={styles.image}/>
         <View style={styles.button}>
           <TouchableHighlight onPress={this.login} underlayColor='transparent' activeOpacity='0.9'>
             <Image source={require('image!FacebookLoginButton')} style={styles.image}/>
@@ -116,25 +117,26 @@ var styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#0A5606',
+    backgroundColor: '#fff',
   },
   welcome: {
     fontSize: 20,
     textAlign: 'center',
     margin: 10,
-    color: 'white'
+    color: 'black'
   },
   instructions: {
     textAlign: 'center',
-    color: 'white',
+    color: 'black',
     marginBottom: 5,
   },
   button: {
     backgroundColor: 'transparent',
-    borderWidth:1,
+
     borderRadius: 10
   },
   image: {
+
   }
 });
 module.exports = Welcome;
