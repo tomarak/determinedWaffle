@@ -50,9 +50,7 @@ var StudentMain = React.createClass({
     fetch(url)
       .then((response) => response.json())
       .then((state) => {
-        this.setState({
-        thumbsCheckTriggered: state,
-        });
+        this.setState({ thumbsCheckTriggered: state });
       })
       .done();
   },
@@ -61,21 +59,21 @@ var StudentMain = React.createClass({
     var url = "https://popping-torch-1564.firebaseio.com/quizTrigger/val.json";
     fetch(url)
       .then((response) => response.json())
-      .then((state) => {
-        this.setState({
-        quizTriggered: state,
-        });
+      .then((data) => {
+        this.getQuiz(data)
       })
       .done();
   },
-  getQuiz: function(){
+
+  getQuiz: function(state){
     var url = "https://popping-torch-1564.firebaseio.com/newQuiz/quiz.json";
-    fetch(url)
+     fetch(url)
       .then((response) => response.json())
       .then((quiz) => {
-        this.props.quiz = quiz;
+        this.setState({quiz: quiz})
       })
-      .done();
+      .done()
+    this.setState({ quizTriggered: state })
   },
 
   vote: function(user, thumb) {
@@ -96,7 +94,8 @@ var StudentMain = React.createClass({
 
   getInitialState: function(){
     return {thumbsCheckTriggered: false,
-      quizTriggered: false}
+      quizTriggered: false,
+      quiz: []}
   },
 
   componentDidMount: function(){
@@ -148,10 +147,25 @@ var StudentMain = React.createClass({
   },
 
   renderQuizView: function(){
+    var choices = this.state.quiz.choices.map(function(choice){
+        return ( 
+          <Text style = {styles.description}>
+            {choice}
+          </Text>
+          )
+      });
 
-  },
+    return (
+      <View style = {styles.container}>
+        <Text style = {styles.description}>
+            {this.state.quiz.question}
+        </Text>
+
+        {choices}
+      </View>
+      )
+    },
   
-
   renderWaitingView: function(){
     return(
     <View style = {styles.container}>
