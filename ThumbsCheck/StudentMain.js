@@ -78,8 +78,9 @@ var StudentMain = React.createClass({
      this.setState({ quizTriggered: quizstate })
   },
 
-  vote: function(user, thumb) {
+  vote: function( thumb) {
     var obj = {};
+    var user = this.props.name;
     obj[user] =thumb;
 
     var url = "https://popping-torch-1564.firebaseio.com/responses/" + user + ".json";
@@ -90,11 +91,12 @@ var StudentMain = React.createClass({
         .then(this.props.navigator.push({
         title: "Thanks!",
         component: Submitted,
-        passProps: {name: "Brian"}
+        passProps: {name: user}
         }));
   },
 
   getInitialState: function(){
+    console.log(this.props);
     return {thumbsCheckTriggered: false,
       quizTriggered: false,
       quiz: []}
@@ -127,16 +129,16 @@ var StudentMain = React.createClass({
           Thumbs on your understanding of React Native!
         </Text>
 
-        <TouchableHighlight onPress={this.vote.bind(this, "brian", "up")} underlayColor='green' activeOpacity='1' style={styles.button}>
+        <TouchableHighlight onPress={this.vote.bind(this, "up")} underlayColor='green' activeOpacity='1' style={styles.button}>
           <Image source={require('image!ThumbsUp')} style={styles.image}/>
         </TouchableHighlight>
         
-        <TouchableHighlight onPress={this.vote.bind(this, "paul", "middle")} underlayColor='gray' activeOpacity='1' style={styles.button}>
+        <TouchableHighlight onPress={this.vote.bind(this, "middle")} underlayColor='gray' activeOpacity='1' style={styles.button}>
           <Image source={require('image!ThumbsMiddle')} style={styles.image}/>
         </TouchableHighlight>
 
 
-        <TouchableHighlight onPress={this.vote.bind(this, "mary", "down")} underlayColor='red' activeOpacity='1' style={styles.button}>
+        <TouchableHighlight onPress={this.vote.bind(this, "down")} underlayColor='red' activeOpacity='1' style={styles.button}>
           <Image source={require('image!ThumbsDown')} style={styles.image}/>
         </TouchableHighlight>
 
