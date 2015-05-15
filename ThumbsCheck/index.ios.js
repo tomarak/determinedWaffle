@@ -17,13 +17,6 @@ var styles = React.StyleSheet.create({
 });
 
 
-// class HelloWorld extends React.Component {
-//   render() {
-//     return <React.Text style={styles.text}>Hello World (Again)</React.Text>;
-
-//   }
-// }
-
 
 class ThumbsCheckApp extends React.Component {
   render() {
@@ -32,7 +25,7 @@ class ThumbsCheckApp extends React.Component {
         style={styles.container}
         initialRoute={{
           title: 'Welcome',
-          component: StudentMain,
+          component: Welcome,
         }}/>
     );
   }
