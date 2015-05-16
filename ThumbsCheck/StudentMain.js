@@ -72,15 +72,26 @@ var styles = StyleSheet.create({
     justifyContent: "flex-start",
     padding: 10,
     alignItems: 'flex-start',
-    backgroundColor: '#0A5606',
-    borderColor: '#76BD72',
-    borderWidth: 20,
+    // backgroundColor: '#0A5606',
+    borderColor: '#5488B2',
+    borderWidth: 5,
     marginTop: 65,
+  },
+  quizInnerContainer:{
+    alignSelf:'center'
   },
   quizText: {
     padding: 20,
-    fontSize: 18,
-    color: "blue",
+    fontSize: 20,
+    color: "#1C1C1A",
+    fontWeight: 'bold'
+  },
+  quizQuestion: {
+    marginTop: 20,
+    marginBottom: 20,
+    fontSize: 30,
+    textAlign: 'left',
+    containerBackgroundColor: 'transparent',
   }
 });
 
@@ -227,11 +238,12 @@ var StudentMain = React.createClass({
   };
     return (
       <View style = {styles.quizOuterContainer}>
-        <Text style = {styles.description}>
+        <Text style = {styles.quizQuestion}>
             {this.state.quiz.question}
         </Text>
-
-        {choices}
+        <View style = {styles.quizInnerContainer}>
+          {choices}
+        </View>
       </View>
       )
     },
