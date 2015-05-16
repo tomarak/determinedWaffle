@@ -81,6 +81,10 @@ var Welcome = React.createClass({
   renderUserView() {
     return(
       <View style={styles.container}>
+      <Image source={require('image!thmblr')} style={styles.image}/>
+      <Text style={styles.instructions}>
+         Hi, {this.state.result}
+        </Text>
         <View style={styles.button}>
           <TouchableHighlight onPress={this.redirToPolling} underlayColor='transparent' activeOpacity='0.9'>
           <Text style={styles.instructions}>
@@ -88,9 +92,7 @@ var Welcome = React.createClass({
           </Text>
         </TouchableHighlight>
         </View>
-        <Text style={styles.instructions}>
-          {this.state.result}
-        </Text>
+        
 
         <View style={styles.button}>
           <TouchableHighlight onPress={this.logout} underlayColor='transparent' activeOpacity='0.9'>
@@ -131,9 +133,17 @@ var styles = StyleSheet.create({
     marginBottom: 5,
   },
   button: {
-    backgroundColor: 'transparent',
-
-    borderRadius: 10
+    height: 36,
+    backgroundColor: '#48BBEC',
+    borderColor: '#48BBEC',
+    borderWidth: 1,
+    borderRadius: 8,
+    paddingLeft: 20,
+    paddingRight: 20,
+    paddingTop: 10,
+    paddingBottom: 10,
+    margin: 5,
+    justifyContent: 'center'
   },
   image: {
 

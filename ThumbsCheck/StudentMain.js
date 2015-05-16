@@ -21,7 +21,7 @@ var styles = StyleSheet.create({
     marginBottom: 20,
     fontSize: 24,
     textAlign: 'center',
-    color: '#CBE7C9',
+    color: '#000',
     containerBackgroundColor: 'transparent'
   },
   container: {
@@ -30,10 +30,10 @@ var styles = StyleSheet.create({
     justifyContent: "center",
     padding: 10,
     alignItems: 'center',
-    backgroundColor: '#0A5606',
-    borderColor: '#76BD72',
-    borderWidth: 20,
-    marginTop: 65,
+    backgroundColor: '#FEFEFF',
+    borderColor: '#5488B2',
+    borderWidth: 5,
+
   },
   flowRight: {
     flexDirection: 'row',
