@@ -19,17 +19,21 @@ var styles = StyleSheet.create({
   description: {
     marginTop: 20,
     marginBottom: 20,
-    fontSize: 18,
+    fontSize: 24,
     textAlign: 'center',
     color: '#CBE7C9',
     containerBackgroundColor: 'transparent'
   },
   container: {
-    padding: 70,
+    flex: 1,
+    flexDirection: "column",
+    justifyContent: "center",
+    padding: 10,
     alignItems: 'center',
     backgroundColor: '#0A5606',
     borderColor: '#76BD72',
-    borderWidth: 15,
+    borderWidth: 20,
+    marginTop: 65,
   },
   flowRight: {
     flexDirection: 'row',
@@ -39,6 +43,11 @@ var styles = StyleSheet.create({
   image: {
     width:100,
     height:100,
+  },
+  check: {
+    width: 40,
+    height: 40,
+    padding: 10
   },
   button: {
     marginTop: 10,
@@ -50,6 +59,28 @@ var styles = StyleSheet.create({
     marginBottom: 25,
     alignSelf: 'center',
     backgroundColor: 'transparent'
+  },
+  quizContainer: {
+    flexDirection: "row",
+    alignItems: "flex-start",
+    justifyContent: "flex-start"
+
+  },
+  quizOuterContainer: {
+    flex: 1,
+    flexDirection: "column",
+    justifyContent: "flex-start",
+    padding: 10,
+    alignItems: 'flex-start',
+    backgroundColor: '#0A5606',
+    borderColor: '#76BD72',
+    borderWidth: 20,
+    marginTop: 65,
+  },
+  quizText: {
+    padding: 20,
+    fontSize: 18,
+    color: "blue",
   }
 });
 
@@ -154,7 +185,7 @@ var StudentMain = React.createClass({
     return(
       <View style = {styles.container}>
         <Text style = {styles.description}>
-          Thumbs on your understanding of React Native!
+          Ready, set, thumb!
         </Text>
 
         <View style={styles.buttonContainer}>
@@ -174,11 +205,6 @@ var StudentMain = React.createClass({
             <Image source={require('image!ThumbsDown')} style={styles.image}/>
           </TouchableHighlight>
         </View>
-
-
-        <Text style = {styles.description}>
-          Pick a thumb.
-        </Text>
       </View>
     )
   },
@@ -188,14 +214,19 @@ var StudentMain = React.createClass({
       var self = this;
       var choices = this.state.quiz.choices.map(function(choice, index){
           return ( 
-            <Text style = {styles.description} onPress= {self.voteQuiz.bind(self, index)}>
-              {choice}
-            </Text>
+            <View style = {styles.quizContainer} >
+              <TouchableHighlight onPress={self.voteQuiz.bind(self, index)} underlayColor='transparent' activeOpacity='0.70' style={styles.button}>
+                <Image source={require('image!Check')} style={styles.check}/>
+              </TouchableHighlight>
+              <Text style = {styles.quizText} onPress= {self.voteQuiz.bind(self, index)}>
+                {choice}
+              </Text>
+            </View>
             )
         })
   };
     return (
-      <View style = {styles.container}>
+      <View style = {styles.quizOuterContainer}>
         <Text style = {styles.description}>
             {this.state.quiz.question}
         </Text>
@@ -209,7 +240,7 @@ var StudentMain = React.createClass({
     return(
     <View style = {styles.container}>
         <Text style = {styles.description}>
-          Waiting for thumbs check...
+          Holster that thumb, cowboy!
         </Text>
     </View>
     )
