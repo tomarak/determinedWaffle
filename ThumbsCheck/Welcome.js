@@ -66,10 +66,10 @@ var Welcome = React.createClass({
     return(
       <View style={styles.container}>
       <Image source={require('image!thmblr')} style={styles.image}/>
-        <View style={styles.button}>
+        <View>
           <TouchableHighlight onPress={this.login} underlayColor='transparent' activeOpacity='0.9'>
             <Image source={require('image!FacebookLoginButton')} style={styles.image}/>
-        </TouchableHighlight>
+          </TouchableHighlight>
         </View>
         <Text style={styles.instructions}>
           {this.state.result}
